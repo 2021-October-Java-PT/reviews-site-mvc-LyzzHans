@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Student Record</title>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <section>
+            <button>
+                <a th:href="@{/}"> Home </a>
+            </button>
+        </section>
+    </nav>
+    <main>
+        <h1>Student Records</h1>
+        <table>
+            <tr> <!-- "tr" stands for Table Row-->
+                <td>Student Name</td> <!-- "td" stands for Table Division (column)-->
+                <td>GitHub Portfolio</td>
+            </tr>
+            <!--            reference backend database-->
+            <tr th:each="student: ${reviewsModel}"> <!-- th:each="" is ThymeLeaf then a For Each loop-->
+                <td>
+                    <a th:text="${review.name}" th:href="@{/products/{id}(id=${product.id})}">Fallback text</a> <!-- th:text="" is ThymeLeaf then the Student Name-->
+                </td>
+                <td>
+                    <a th:href="${review.imageUrl}">GitHub</a>
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <small>&copy; wecancodeit 2021</small> <!-- &copy; gives a C with circle (copyright symbol)-->
+    </footer>
+</div>
+</body>
+</html>
