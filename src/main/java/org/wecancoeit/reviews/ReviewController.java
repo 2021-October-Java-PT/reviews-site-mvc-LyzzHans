@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -19,12 +20,11 @@ public class ReviewController {
 
     @RequestMapping("/reviews")
     public String findAllReviews(Model model){
-        model.addAttribute("productModel", reviewRepo.findAll());
-        return "reviewTemplate";
+        model.addAttribute("reviewsModel", reviewRepo.findAll());
+        return "reviewsTemplate";
     }
-    @RequestMapping("/review/{id}")
-    public String findOneReview(@PathVariable Long id, Model model)  {
-        model.addAttribute("productModel", reviewRepo.findOne(id));
+    @RequestMapping("/review")
+    public String findOneReview(@RequestParam(value = "id") Long id)  {
         return "reviewTemplate";
     }
 

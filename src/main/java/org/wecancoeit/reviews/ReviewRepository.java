@@ -9,28 +9,39 @@ import java.util.Map;
 
 @Repository
 public class ReviewRepository {
-    Map<Long, Review> productList = new HashMap<>();
+    Map<Long, Review> reviewsList = new HashMap<>();
 
-    private Review lasTotallyAwesome = new Review(1L, "LAs Totally Awesome", "image url", "all purpose spray", "content");
-    private Review persil = new Review(2L, "Persil", "image url", "laundry detergent", "content");
-    private Review fabuloso = new Review(3L, "Fabuloso", "image url", "all purpose liquid", "content");
-    private Review odoBan = new Review(4L, "OdoBan", "image url", "disinfectant", "content");
-    private Review dawnPowerwash = new Review(5L, "Dawn Powerwash", "image url", "dish soap", "content");
+    public ReviewRepository() {
+        Review lasTotallyAwesome = new Review(1L, "LAs Totally Awesome", "image url", "all purpose spray", "Smelly, but cleans tough stains");
+        Review persil = new Review(2L, "Persil", "image url", "laundry detergent", "Expensive, but magic on laundry");
+        Review fabuloso = new Review(3L, "Fabuloso", "image url", "all purpose liquid", "Die hard fan, add a cap of bleach");
+        Review odoBan = new Review(4L, "OdoBan", "image url", "disinfectant", "smells so much better than lysol");
+        Review dawnPowerwash = new Review(5L, "Dawn Powerwash", "image url", "dish soap", "Not just for dishes, cleans tubs and showers too!");
 
-
-    public ReviewRepository(){
-        productList.put(lasTotallyAwesome.getId(), lasTotallyAwesome);
-        productList.put(persil.getId(),persil);
-        productList.put(fabuloso.getId(),fabuloso);
-        productList.put(odoBan.getId(),odoBan);
-        productList.put(dawnPowerwash.getId(),dawnPowerwash);
-
+        reviewsList.put(lasTotallyAwesome.getId(), lasTotallyAwesome);
+        reviewsList.put(persil.getId(), persil);
+        reviewsList.put(fabuloso.getId(), persil);
+        reviewsList.put(odoBan.getId(), odoBan);
+        reviewsList.put(dawnPowerwash.getId(), dawnPowerwash);
     }
-    public Review findById(long id) {
-        return productList.get(id);
 
+    public ReviewRepository(Review... reviewsToAdd) {
+        for (Review review : reviewsToAdd) {
+            reviewsList.put(review.getId(), review);
+        }
     }
-    public Review findOne(long id)  { return productList.get(id); }
 
-    public Collection<Review> findAll() {return productList.values(); }
+
+    //    public ReviewRepository(Review reviewOne) {
+//
+//    }
+//
+    public Review findOne(long id) {
+        return reviewsList.get(id);
+    }
+
+    public Collection<Review> findAll() {
+        return reviewsList.values();
+    }
+
 }

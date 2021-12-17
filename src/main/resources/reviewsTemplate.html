@@ -15,16 +15,16 @@
         </section>
     </nav>
     <main>
-        <h1>Student Records</h1>
+        <h1>Reviews of Cleaning Supplies</h1>
         <table>
             <tr> <!-- "tr" stands for Table Row-->
-                <td>Student Name</td> <!-- "td" stands for Table Division (column)-->
-                <td>GitHub Portfolio</td>
+                <td>Product Name</td> <!-- "td" stands for Table Division (column)-->
+                <td>Product Url</td>
             </tr>
             <!--            reference backend database-->
-            <tr th:each="student: ${reviewsModel}"> <!-- th:each="" is ThymeLeaf then a For Each loop-->
+            <tr th:each="student: ${reviewsModel}">
                 <td>
-                    <a th:text="${review.name}" th:href="@{/products/{id}(id=${product.id})}">Fallback text</a> <!-- th:text="" is ThymeLeaf then the Student Name-->
+                    <a th:text="${review.name}" th:href="@{/products/{id}(id=${product.id})}">Fallback text</a>
                 </td>
                 <td>
                     <a th:href="${review.imageUrl}">GitHub</a>
@@ -33,7 +33,7 @@
         </table>
     </main>
     <footer>
-        <small>&copy; wecancodeit 2021</small> <!-- &copy; gives a C with circle (copyright symbol)-->
+        <small>&copy; wecancodeit 2021</small>
     </footer>
 </div>
 </body>

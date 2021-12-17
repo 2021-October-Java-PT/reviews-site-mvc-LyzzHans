@@ -5,14 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-//Create a ReviewsController class.
-//It should have a method mapped to a url outputs all reviews and
-//should have a method mapped to a url including an id parameter that outputs the details of a single review
 @Entity
 public class Review {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
     private String imageUrl;
     private String reviewCategory;
@@ -27,7 +24,7 @@ public class Review {
     }
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
