@@ -27,8 +27,9 @@ public class ReviewRepository {
         Review fabuloso = new Review(3L, "Fabuloso", "image url", "all purpose liquid", "Die hard fan, add a cap of bleach");
         Review odoBan = new Review(4L, "OdoBan", "image url", "disinfectant", "smells so much better than lysol");
         Review dawnPowerwash = new Review(5L, "Dawn Powerwash", "image url", "dish soap", "Not just for dishes, cleans tubs and showers too!");
+
     }
-    public Review findOne(long id) {
+    public Review findOne(Long id) {
         return reviewsList.get(id);
     }
 

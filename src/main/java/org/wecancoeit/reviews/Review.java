@@ -15,7 +15,7 @@ public class Review {
     private String reviewCategory;
     private String content;
 
-    public Review(long id, String name, String imageUrl, String reviewCategory, String content) {
+    public Review(Long id, String name, String imageUrl, String reviewCategory, String content) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
