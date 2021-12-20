@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles/style.css">
-    <title th:text="${reviewModel.name}">Title</title>
+    <title th:text="${reviewModel.name}">A review</title>
 </head>
 <body>
-<div class="container">
-    <nav>
-        <section>
-            <button>
-                <a th:href="@{/}">Home</a>
-            </button>
-        </section>
-    </nav>
-    <main>
-        <h1 th:text="${reviewModel.name}"></h1>
-        <a th:href="${reviewModel.imageUrl}">Review</a>
-    </main>
-    <footer>
-        <small>&copy; wecancodeit 2021</small>
-    </footer>
-</div>
+<header>
+    <h1 th:text="${reviewModel.name}">A review</h1>
+</header>
+<main>
+    <ol>
+        <p><a href="/reviews">Reviews</a></p>
+        <li th:text="${reviewModel.name}"></li>
+    </ol>
+    <h2 th:text="${reviewModel.description}"></h2>
+</main>
+<footer>
+    <small>Lyzz Hans 2021</small>
+</footer>
 </body>
 </html>

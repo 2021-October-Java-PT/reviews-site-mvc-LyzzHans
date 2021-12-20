@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(ReviewController.class)
-class ReviewControllerMvcTest {
+public class ReviewControllerMvcTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -49,3 +49,4 @@ class ReviewControllerMvcTest {
         mockMvc.perform(get("/review?id=1")).andExpect(model().attribute("reviewModel", reviewOne));
     }
 }
+

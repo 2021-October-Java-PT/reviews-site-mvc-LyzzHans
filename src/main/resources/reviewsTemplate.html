@@ -1,40 +1,20 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles/style.css">
-    <title>Student Record</title>
+    <title> A List of All Available Reviews</title>
 </head>
 <body>
-<div class="container">
-    <nav>
-        <section>
-            <button>
-                <a th:href="@{/}"> Home </a>
-            </button>
-        </section>
-    </nav>
-    <main>
-        <h1>Reviews of Cleaning Supplies</h1>
-        <table>
-            <tr> <!-- "tr" stands for Table Row-->
-                <td>Product Name</td> <!-- "td" stands for Table Division (column)-->
-                <td>Product Url</td>
-            </tr>
-            <!--            reference backend database-->
-            <tr th:each="student: ${reviewsModel}">
-                <td>
-                    <a th:text="${review.name}" th:href="@{/products/{id}(id=${product.id})}">Fallback text</a>
-                </td>
-                <td>
-                    <a th:href="${review.imageUrl}">GitHub</a>
-                </td>
-            </tr>
-        </table>
-    </main>
-    <footer>
-        <small>&copy; wecancodeit 2021</small>
-    </footer>
-</div>
+
+<header>
+    <h1> Best Cleaning Products</h1>
+</header>
+<main>
+    <ul>
+        <li th:each="review: ${reviewsModel}"><a> th:href="@{/review.id})}" th:text="${review.name}"></a></li>
+    </ul>
+</main>
+<footer>
+    <small>Copyright Lyzz Hans 2021</small>
+</footer>
 </body>
 </html>
