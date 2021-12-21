@@ -15,6 +15,10 @@ public class ReviewController {
    @Resource
     private ReviewRepository reviewRepo;
 
+   @RequestMapping("/")
+public String homePage() {return "home";}
+
+
     @RequestMapping("/reviews")
     public String findAllReviews(Model model) {
         model.addAttribute("reviewsModel", reviewRepo.findAll());
@@ -31,7 +35,7 @@ public class ReviewController {
     @RequestMapping("/review/{id}")
     public String findOneReview(@PathVariable Long id, Model model)  {
         model.addAttribute("reviewModel", reviewRepo.findOne(id));
-        return "reviewTemplate";
+        return "reviewTemplate.html";
     }
 
 }
